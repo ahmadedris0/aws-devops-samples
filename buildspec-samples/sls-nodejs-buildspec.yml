@@ -1,0 +1,10 @@
+version: 0.1
+phases:
+  install:
+    commands:
+      - npm install
+      - npm install -g serverless
+  post_build:
+    commands:
+      - sls prune -n 3
+      - sls deploy
